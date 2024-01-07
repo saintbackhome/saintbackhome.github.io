@@ -1,0 +1,312 @@
+body, html, canvas {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 20000px;
+	position: relative;		  /*background-image: url(/assets/home/back.svg);*/
+
+	/*background-repeat: repeat;*/
+}
+
+body[data-device='phone'] {
+	height: auto;
+}
+
+body[data-device='phone'] .poster {
+	display: none
+}
+
+canvas {
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.content {
+	display: inline;
+}
+
+.header {
+	background-color: transparent;
+	border: none;
+}
+
+[data-device='phone'] .header {
+	background-color: white;	/*border-: 1px solid black;*/
+}
+
+.label {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	z-index: 999;
+}
+
+.circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 100px !important;	/*background-color: darkgrey;*/
+	border: 3px solid grey;	/*background-image: url(/assets/home/home-cursor.svg)*/
+	animation: pulsate 1s ease-out;
+	animation-iteration-count: infinite;	/*opacity: 0.0;*/
+	-webkit-animation: pulsate 1s ease-out;
+	-webkit-animation-iteration-count: infinite;	/*opacity: 0.0;*/
+}
+
+@-webkit-keyframes pulsate {
+	0% {
+		-webkit-transform: scale(0.1, 0.1);
+		opacity: 0.0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		-webkit-transform: scale(1, 1);
+		opacity: 0.0;
+	}
+
+}
+
+/*.eye {
+	cursor: url(/home/home-cursor.svg), auto;
+}
+*/
+.poster {
+	z-index: 0;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	max-width: 100%;
+	height: 4500px;
+}
+@media only screen and (max-width:1024px){
+	.poster{
+		
+			z-index: 0;
+			margin: auto;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100px;
+			max-width: 100%;
+			height: 1500px;
+			
+	
+	}
+}
+
+/*
+
+
+loader
+
+
+*/
+body.loading {
+	overflow: hidden;
+}
+
+body.loading.ready {
+	overflow: auto;
+}
+
+body.loading[data-device='phone'] {
+	overflow: auto;
+}
+
+body.loading.ready .loader {
+	display: none;
+}
+
+body.loading[data-device='phone'].loaded .loader {
+	display: none;
+}
+
+body.loading .loader {
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: 99999999999999999;
+	position: fixed;
+}
+/* FIX LOADING POSITION HERE  */
+.loader div {
+	position: absolute;
+	margin: auto;
+	left: 100px;
+	top: 100px;
+	/*top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;*/
+	color: white;
+	display: block;
+	width: 300px;
+	height: 50px;
+	/*text-align: center;
+	font-variant: small-caps;
+	font-weight: 700;
+	letter-spacing: 3px;
+	font-size: 16px;*/
+}
+
+
+@media only screen and (max-width:1024px){
+	.loader div {
+		position: absolute;
+		margin: auto;
+		left: -460px;
+		top: 100px;
+		/*top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;*/
+		color: white;
+		display: block;
+		width: 300px;
+		height: 50px;
+		/*text-align: center;
+		font-variant: small-caps;
+		font-weight: 700;
+		letter-spacing: 3px;
+		font-size: 16px;*/
+	}
+}
+/* html color codes */
+/* #84142d
+#c02739
+#29c7ac */
+
+
+
+.border-right {
+	background-image: url(/assets/home/border.svg);
+	width: 15px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	display: none;
+}
+
+.border-left {
+	background-image: url(/assets/home/border.svg);
+	width: 15px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+}
+
+.end a {
+	//display: block;
+}
+
+.end {
+	position: absolute;
+	z-index: 9999;
+	line-height: 100px;
+	bottom: 52vh;
+	left: 50%;
+	font-size: 8.4vw;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.logo {
+	width: 16%;/*margin-bottom:-1vw;*/
+	transform: translateY(50%) translateX(-50%);
+}
+
+.logo:hover {
+	content: url('../assets/home/home-instagram.svg');
+}
+
+@keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@-o-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@-moz-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@-webkit-keyframes flickerAnimation {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+.animate-flicker {
+	-webkit-animation: flickerAnimation 3s infinite ease-in;
+	-moz-animation: flickerAnimation 3s infinite ease-in;
+	-o-animation: flickerAnimation 3s infinite ease-in;
+	animation: flickerAnimation 3s infinite ease-in;
+}
+
+
+
+/* 525252 grey
+414141 darker grey
+313131 pencil lead
+ca3e47 red accent */
